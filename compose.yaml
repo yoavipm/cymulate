@@ -1,0 +1,34 @@
+services:
+  web:
+    container_name: react
+    build: ./my-client
+    ports:
+      - "3000:3000"
+
+  backend-server:
+    container_name: backend
+    build: ./server
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongoDb
+    environment:
+      DB_URL: "mongodb://mongoDb:27017"
+      SCRAPING_MODULE_URL: "http://scraper:8080"
+
+  mongoDb:
+    container_name: mongo
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - "27017:27017"
+
+  scraper:
+    container_name: scraping
+    build: ./scraping
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongoDb
+    environment:
+      DB_URL: "mongodb://mongoDb:27017"
+

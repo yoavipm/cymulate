@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "strictNullChecks": true,
+    "outDir": "dist",
+    "lib": ["ES2015.Core"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

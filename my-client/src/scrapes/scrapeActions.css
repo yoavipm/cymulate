@@ -1,0 +1,11 @@
+.scrapeActions{
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    column-gap: 0.5rem;
+}
+
+.ant-input-search-with-button{
+    width: 40%;
+}
